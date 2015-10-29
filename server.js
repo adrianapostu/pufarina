@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var five = require("johnny-five");
 var cors = require('cors');
-// var Edison = require("edison-io");
+var Edison = require("edison-io");
 
 // initialise Edison baord and LED pins
 
