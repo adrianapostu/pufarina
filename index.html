@@ -21,7 +21,7 @@
       // Let's define a command.
       var commands = {
         'red on': function() {
-          $.ajax('http://localhost:9000/1/on', {
+          $.ajax('http://10.0.0.49:9000/1/on', {
             data : JSON.stringify({
               'edison': 'test'
             }),
@@ -33,7 +33,7 @@
         },
 
         'red off': function() {
-          $.ajax('http://localhost:9000/1/off', {
+          $.ajax('http://10.0.0.49:9000/1/off', {
             data : JSON.stringify({
               'edison': 'test'
             }),
@@ -45,7 +45,7 @@
         },
 
         'blue on': function() {
-          $.ajax('http://localhost:9000/2/on', {
+          $.ajax('http://10.0.0.49:9000/2/on', {
             data : JSON.stringify({
               'edison': 'test'
             }),
@@ -57,7 +57,7 @@
         },
 
         'blue off': function() {
-          $.ajax('http://localhost:9000/2/off', {
+          $.ajax('http://10.0.0.49:9000/2/off', {
             data : JSON.stringify({
               'edison': 'test'
             }),
