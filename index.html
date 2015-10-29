@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>pufarina</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.0.0/annyang.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  </head>
+  <body>
+    <script>
+    if (annyang) {
+      // Let's define a command.
+      var commands = {
+        'red on': function() {
+          $.ajax('http://localhost:9000/1/on', {
+            data : JSON.stringify({
+              'edison': 'test'
+            }),
+            contentType : 'application/json',
+            type : 'POST',
+            success: function (res) {
+              document.getElementsByClassName('bec')[0].style.backgroundColor = 'red'
+            }});
+        },
+
+        'red off': function() {
+          $.ajax('http://localhost:9000/1/off', {
+            data : JSON.stringify({
+              'edison': 'test'
+            }),
+            contentType : 'application/json',
+            type : 'POST',
+            success: function (res) {
+              document.getElementsByClassName('bec')[0].style.backgroundColor = 'green'
+            }});
+        },
+
+        'blue on': function() {
+          $.ajax('http://localhost:9000/2/on', {
+            data : JSON.stringify({
+              'edison': 'test'
+            }),
+            contentType : 'application/json',
+            type : 'POST',
+            success: function (res) {
+              document.getElementsByClassName('bec')[0].style.backgroundColor = 'blue'
+            }});
+        },
+
+        'blue off': function() {
+          $.ajax('http://localhost:9000/2/off', {
+            data : JSON.stringify({
+              'edison': 'test'
+            }),
+            contentType : 'application/json',
+            type : 'POST',
+            success: function (res) {
+              document.getElementsByClassName('bec')[0].style.backgroundColor = 'green'
+            }});
+        }
+      };
+
+      // Add our commands to annyang
+      annyang.addCommands(commands);
+
+      // Start listening.
+      annyang.start();
+    }
+    </script>
+    <div class="bec">
+
+    </div>
+  </body>
+</html>
