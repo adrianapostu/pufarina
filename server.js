@@ -8,7 +8,6 @@ var path = require('path');
 // initialise Edison baord and LED pins
 var board = new five.Board({
   io: new Edison()
-  console.log('edison is live');
 });
 
 
@@ -24,6 +23,7 @@ app.get('/', function(req, res)
     res.sendFile(path.join(__dirname, '/index.html'));
   });
 
+console.log('edison is live');
 // post requests
 // {id} is a param, usually a number
 app.post('/:id/on', function (req, res) {
