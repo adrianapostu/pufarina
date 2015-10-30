@@ -6,6 +6,10 @@ var Edison = require("edison-io");
 var path = require('path');
 
 // initialise Edison baord and LED pins
+var board = new five.Board({
+  io: new Galileo()
+});
+
 
 var app = express();
 
@@ -22,6 +26,11 @@ app.get('/', function(req, res)
 // {id} is a param, usually a number
 app.post('/:id/on', function (req, res) {
   var becId = req.params.id;
+
+  board.on("ready", function() {
+      this.pinMode(becId, this.MODES.OUTPUT);
+      board.digitalWrite(becId, 1);
+  });
   console.log('becul', becId, 's-a aprins');
 
   res.status(200).send({
@@ -31,6 +40,12 @@ app.post('/:id/on', function (req, res) {
 
 app.post('/:id/off', function (req, res) {
   var becId = req.params.id;
+
+  board.on("ready", function() {
+      this.pinMode(becId, this.MODES.OUTPUT);
+      board.digitalWrite(becId, 0);
+  });
+
   console.log('becul', becId, 's-a stins');
 
   res.status(200).send({
