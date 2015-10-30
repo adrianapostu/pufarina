@@ -7,7 +7,7 @@ var path = require('path');
 
 // initialise Edison baord and LED pins
 var board = new five.Board({
-  io: new Galileo()
+  io: new Edison()
 });
 
 
