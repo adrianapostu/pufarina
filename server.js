@@ -12,6 +12,7 @@ var board = new five.Board({
 
 
 var app = express();
+var board_this;
 
 //middleware
 app.use(cors())
@@ -28,6 +29,7 @@ app.post('/:id/on', function (req, res) {
   var becId = req.params.id;
 
   board.on("ready", function() {
+    board_this = this;
       this.pinMode(becId, this.MODES.OUTPUT);
       board.digitalWrite(becId, 1);
       console.log('led cu id', becId, ' aprins')
