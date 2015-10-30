@@ -37,7 +37,7 @@ var express = require('express');
      status: 'success'
    })
  })
- 
+
  app.post('/:id/off', function (req, res) {
    var becId = req.params.id;
    board.pinMode(parseInt(becId), board.MODES.OUTPUT);
@@ -50,6 +50,35 @@ var express = require('express');
      status: 'success'
    })
  })
+
+//next door
+
+app.post('/:id/lock', function (req, res) {
+       var becId = req.params.id;
+      board.pinMode(parseInt(becId), board.MODES.OUTPUT);
+       board.servoWrite(parseInt(becId), 10);
+ 
+   res.status(200).send({
+     status: 'success'
+   })
+ })
+
+app.post('/:id/unlock', function (req, res) {
+       var becId = req.params.id;
+      board.pinMode(parseInt(becId), board.MODES.OUTPUT);
+       board.servoWrite(parseInt(becId), 80);
+ 
+   res.status(200).send({
+     status: 'success'
+   })
+ })
+
+
+
+
+
+
+
  
  var server = app.listen(9000, function () {
    console.log('Example app listening at port 9000');
