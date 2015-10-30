@@ -28,8 +28,8 @@ console.log('edison is live');
 // {id} is a param, usually a number
 app.post('/:id/on', function (req, res) {
       var becId = req.params.id;
-      board.pinMode(becId, this.MODES.OUTPUT);
-      board.digitalWrite(becId, 1);
+      board.pinMode(parseInt(becId), this.MODES.OUTPUT);
+      board.digitalWrite(parseInt(becId), 1);
       console.log('led cu id', becId, ' aprins');
       console.log('becul', becId, 's-a aprins');
 
@@ -41,8 +41,8 @@ app.post('/:id/on', function (req, res) {
 app.post('/:id/off', function (req, res) {
   var becId = req.params.id;
 
-  board.pinMode(becId, this.MODES.OUTPUT);
-  board.digitalWrite(becId, 0);
+  board.pinMode(parseInt(becId), this.MODES.OUTPUT);
+  board.digitalWrite(parseInt(becId), 0);
   console.log('led cu id', becId, ' stins');
 
   console.log('becul', becId, 's-a stins');
