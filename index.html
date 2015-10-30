@@ -32,6 +32,30 @@
             }});
         },
 
+        'lock door': function() {
+          $.ajax('http://10.0.0.49:9000/3/lock', {
+            data : JSON.stringify({
+              'edison': 'test'
+            }),
+            contentType : 'application/json',
+            type : 'POST',
+            success: function (res) {
+              document.getElementsByClassName('bec')[0].style.backgroundColor = 'red'
+            }});
+        },
+
+        'unlock door': function() {
+          $.ajax('http://10.0.0.49:9000/3/unlock', {
+            data : JSON.stringify({
+              'edison': 'test'
+            }),
+            contentType : 'application/json',
+            type : 'POST',
+            success: function (res) {
+              document.getElementsByClassName('bec')[0].style.backgroundColor = 'red'
+            }});
+        },
+
         'turn off first light': function() {
           $.ajax('http://10.0.0.49:9000/2/off', {
             data : JSON.stringify({
