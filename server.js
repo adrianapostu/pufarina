@@ -8,7 +8,7 @@ var path = require('path');
 // initialise Edison baord and LED pins
 var board = new five.Board({
   io: new Edison()
-  console.log("edison is live")
+  console.log("edison is live");
 });
 
 
@@ -33,7 +33,7 @@ app.post('/:id/on', function (req, res) {
     board_this = this;
       this.pinMode(becId, this.MODES.OUTPUT);
       board.digitalWrite(becId, 1);
-      console.log('led cu id', becId, ' aprins')
+      console.log('led cu id', becId, ' aprins');
   });
   console.log('becul', becId, 's-a aprins');
 
@@ -48,7 +48,7 @@ app.post('/:id/off', function (req, res) {
   board.on("ready", function() {
       this.pinMode(becId, this.MODES.OUTPUT);
       board.digitalWrite(becId, 0);
-      console.log('led cu id', becId, ' stins')
+      console.log('led cu id', becId, ' stins');
   });
 
   console.log('becul', becId, 's-a stins');
