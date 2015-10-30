@@ -8,7 +8,7 @@ var path = require('path');
 // initialise Edison baord and LED pins
 var board = new five.Board({
   io: new Edison()
-  console.log("edison is live");
+  console.log('edison is live');
 });
 
 
