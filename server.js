@@ -56,7 +56,7 @@ var express = require('express');
 app.post('/:id/lock', function (req, res) {
        var becId = req.params.id;
       board.pinMode(parseInt(becId), board.MODES.OUTPUT);
-       board.servoWrite(parseInt(becId), 10);
+       board.servoWrite(parseInt(becId), 80);
  
    res.status(200).send({
      status: 'success'
@@ -66,7 +66,7 @@ app.post('/:id/lock', function (req, res) {
 app.post('/:id/unlock', function (req, res) {
        var becId = req.params.id;
       board.pinMode(parseInt(becId), board.MODES.OUTPUT);
-       board.servoWrite(parseInt(becId), 80);
+       board.servoWrite(parseInt(becId), 10);
  
    res.status(200).send({
      status: 'success'
