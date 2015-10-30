@@ -30,6 +30,7 @@ app.post('/:id/on', function (req, res) {
   board.on("ready", function() {
       this.pinMode(becId, this.MODES.OUTPUT);
       board.digitalWrite(becId, 1);
+      console.log('led cu id', becId, ' aprins')
   });
   console.log('becul', becId, 's-a aprins');
 
@@ -44,6 +45,7 @@ app.post('/:id/off', function (req, res) {
   board.on("ready", function() {
       this.pinMode(becId, this.MODES.OUTPUT);
       board.digitalWrite(becId, 0);
+      console.log('led cu id', becId, ' stins')
   });
 
   console.log('becul', becId, 's-a stins');
