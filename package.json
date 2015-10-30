@@ -4,8 +4,7 @@
   "description": "control led with voice",
   "main": "main.js",
   "scripts": {
-    "start": "node ./server.js",
-    "install": "npm install  body-parser cors edison-io express galileo-io johnny-five"
+    "start": "node ./server.js"
   },
   "author": "Pufarina",
   "license": "MIT",
